@@ -24,6 +24,7 @@ const Dropdown = () => {
   const handleItem = val => {
     setSearchTerm(val);
   };
+  
   return (
     <div className="custom-select-wrapper">
       <AddUser />
