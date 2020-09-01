@@ -1,38 +1,201 @@
-.App {
-  text-align: center;
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  line-height: 1;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+.custom-select-wrapper {
+  position: relative;
+  user-select: none;
+  width: 40vw;
+  margin: 0 auto;
+  padding: 10px;
+  position: relative;
+}
+.custom-select {
+  position: relative;
   display: flex;
   flex-direction: column;
+  border-width: 0 2px 0 2px;
+  border-style: solid;
+  border-color: #394a6d;
+  margin-top: 100px;
+}
+.custom-select__trigger {
+  position: relative;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  padding: 0 22px;
+  font-size: 20px;
+  font-weight: 300;
+  color: #3b3b3b;
+  height: 60px;
+  line-height: 60px;
+  background: #ffffff;
+  cursor: pointer;
+  border-width: 2px 0 2px 0;
+  border-style: solid;
+  border-color: #394a6d;
+}
+.custom-options {
+  position: absolute;
+  display: block;
+  top: 100%;
+  left: 0;
+  right: 0;
+  border: 2px solid #394a6d;
+  border-top: 0;
+  background: #fff;
+  transition: all 0.5s;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 2;
+}
+.custom-select.open .custom-options {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+.arrow {
+  position: relative;
+  height: 15px;
+  width: 15px;
+}
+.arrow::before, .arrow::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  width: 0.15rem;
+  height: 100%;
+  transition: all 0.5s;
+}
+.arrow::before {
+  left: -5px;
+  transform: rotate(45deg);
+  background-color: #394a6d;
+}
+.arrow::after {
+  left: 5px;
+  transform: rotate(-45deg);
+  background-color: #394a6d;
+}
+.open .arrow::before {
+  left: -5px;
+  transform: rotate(-45deg);
+}
+.open .arrow::after {
+  left: 5px;
+  transform: rotate(45deg);
 }
 
-.App-link {
-  color: #61dafb;
+.has-search .search-control {
+  padding-left: 2.375rem;
+  width: 36vw;
+  height: 5vh;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.has-search .form-control-feedback {
+  position: absolute;
+  margin:6px;
 }
+.main {
+  width: 50%;
+  margin: 10px 15px 10px;
+}
+.country-list {
+  margin:10px 20px;
+  line-height:200%;
+  cursor: pointer;
+}
+ul.country-list, .more-items {
+  display: inline-block;
+  vertical-align: top;
+}
+.more-items {
+  float:right;
+  margin-top: 150px;
+}
+.hide {
+  display:none;
+}
+.add-new-item{
+  background-color: white;
+  padding: 4px;
+  border-radius: 6px;
+  margin: -32px 420px;
+  position: fixed;
+}
+.add-user {
+  background:white;
+  width:300px;
+  border-radius:6px;
+  margin: 0 auto 0 auto;
+  padding:0px 0px 70px 0px;
+  border: #394a6d 4px solid; 
+}
+.add-user h1 {
+  font-size:1.5em;
+  color:#525252;
+  margin: 10px 20px;
+}
+.form-control{
+  border: #ccc 1px solid;
+  border-bottom: #ccc 2px solid;
+  padding: 8px;
+  width:250px;
+  margin:20px;
+  font-size:1em;
+  border-radius:4px;
+}
+.add-privilege {
+  margin-left: 20px;
+}
+.btn {
+  margin-top:20px;
+  margin-bottom:20px;
+  background:#394a6d;
+  color:white;
+  border-radius:4px;
+  border: #394a6d 1px solid;
+  font-weight:800;
+  font-size:0.8em;
+  padding-top:5px;
+  padding-bottom:5px;
+  float:left;
+  width:125px;  
+  cursor: pointer;
+}
+.btn-add1 {
+  margin-left:16px;
+}
+.btn-add2{
+  margin-left:10px;
+}
+
